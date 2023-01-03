@@ -133,6 +133,13 @@ namespace util
 			return content_.size();
 		}
 
+		//Overload for setting objects
+		template<typename T, typename = st_supported_type<T>>
+		void operator()(const T val, const size_t item = 0)
+		{
+			this->set<T>(val, item);
+		}
+
 		//We can use this to exploit the array subscript operator
 		inline DataFile& operator[](const std::string& name)
 		{
@@ -190,10 +197,10 @@ int main()
 
 	df["Some_Node"]["pc"]["processor"].set<std::string>("intel");
 	df["Some_Node"]["pc"]["ram"].set<int>(32);
+	df["Some_Node"]["pc"]["GPU"]("Nvidia", 0); //Example using () overload
 
 	//Get the pc processor value
 	std::string proc = df["Some_Node"]["pc"]["processor"].get<std::string>();
-	//print proc
 	std::cout << "proc: " << proc << '\n';
 
 	return 0;
