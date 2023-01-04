@@ -1,6 +1,6 @@
 # File Serialization
 
-Inspired by the Javidx9 video: https://www.youtube.com/watch?v=jlS1Y2-yKV0
+From the Javidx9 video: https://www.youtube.com/watch?v=jlS1Y2-yKV0 (with some QOL Modifications)
 
 My approach does things a little different with implementation mainly using SFINAE to make things more cut down than before.
 
