@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(FileSerializer test.cpp)
+add_executable(FileSerializer test.cpp Serializer/DataFile.h)
